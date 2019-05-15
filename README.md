@@ -1,9 +1,29 @@
-# vue组件开发模板
-webpack构建的vue组件开发模板
+# vue蒙版组件
+![](//cdn.51talk.com/apollo/images/cfc911ac9e302b1ea4c477254461856e.png)
 ## install
 NPM
 ```
-npm install
+npm install @nat/vue-overlay --save
+```
+## 用法
+```
+<template lang="html">
+     <div class="features">
+                <button @click="isShow = !isShow">显示</button>
+                <overlay :z-index="2000" v-model="isShow"></overlay>
+            </div>
+</template>
+```
+```
+<script>
+    import overlay from '@nat/vue-overlay';
+
+    export default {
+        components: {
+            overlay
+        }
+    };
+</script>
 ```
 ## 启动
 ```

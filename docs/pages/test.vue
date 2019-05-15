@@ -3,7 +3,7 @@
         <h1 class="title">蒙层</h1>
         <div class="features">
             <button @click="isShow = !isShow">显示</button>
-            <demo :z-index="2000" class-name="bg" v-model="isShow"></demo>
+            <demo :z-index="2000" v-model="isShow"></demo>
         </div>
     </div>
 </template>
