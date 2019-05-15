@@ -1,13 +1,19 @@
 <template>
-    <div class="vue-overlay"  @touchmove="move" @touchend="handleClick" :style="{zIndex: zIndex}">
-    </div>
+    <transition name="fade">
+        <div v-show="value" class="vue-overlay"  @touchmove="move" @touchend="handleClick" :style="{zIndex: zIndex}">
+        </div>
+    </transition>
 </template>
 
 <script>
     export default {
       name: "vue-overlay",
       props: {
-        zIndex: Number
+        zIndex: Number,
+        value: {
+          type: Boolean,
+          default: false
+        }
       },
       methods: {
         move (e) {
@@ -15,7 +21,7 @@
           e.stopPropagation();
         },
         handleClick () {
-          this.$emit('click');
+          this.$emit('input', false);
         }
       }
     }
@@ -30,5 +36,11 @@
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to{
+    opacity: 0;
 }
 </style>

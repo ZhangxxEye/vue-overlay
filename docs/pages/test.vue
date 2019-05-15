@@ -1,8 +1,9 @@
 <template lang="html">
     <div id="project-features">
-        <h1 class="title">vue-list</h1>
+        <h1 class="title">蒙层</h1>
         <div class="features">
-            <demo :z-index="2000" class-name="bg"></demo>
+            <button @click="isShow = !isShow">显示</button>
+            <demo :z-index="2000" class-name="bg" v-model="isShow"></demo>
         </div>
     </div>
 </template>
@@ -17,7 +18,8 @@
                 list: [],
                 loading: false,
                 finished: false,
-                error: false
+                error: false,
+                isShow: false
             };
         },
         components: {
@@ -140,7 +142,6 @@
         font-size: 23px;
         font-weight: bold;
         font-family: 'Raleway', sans-serif;
-        color: #fff;
         margin-bottom: 20px
     }
 
