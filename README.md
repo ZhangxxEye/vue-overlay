@@ -25,6 +25,12 @@ npm install @nat/vue-overlay --save
     };
 </script>
 ```
+## API
+#### props
+属性 | 说明 | 类型 | 默认值
+---|---|---|---
+zIndex | 显示层级 | Number | 1000
+value | 显示或者隐藏 | Boolean | false
 ## 启动
 ```
 npm run dev
